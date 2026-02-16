@@ -23,7 +23,7 @@ Edit the `config.json` file with your specific values:
 
 ```json
 {
-  "location": "canadaeast",
+  "location": "uaenorth",
   "resourceGroup": "rg-sail-dev",
   "vnetResourceGroup": "rg-sail-network-dev",
   "vnetName": "private-vnet",
@@ -32,9 +32,9 @@ Edit the `config.json` file with your specific values:
   "amlFriendlyName": "SAIL Azure ML deployment demo",
   "amlDescription": "This is an example SAIL deployment using Azure ML.",
   "prefix": "saildeploy",
-  "foundryName": "foundry-canadaeast-sail-dev",
-  "foundryLocation": "canadaeast",
-  "foundryProjectName": "foundry-canadaeast-sail-dev-proj"
+  "foundryName": "foundry-uaenorth-sail-dev",
+  "foundryLocation": "uaenorth",
+  "foundryProjectName": "foundry-uaenorth-sail-dev-proj"
 }
 ```
 

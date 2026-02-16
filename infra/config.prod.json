@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Production configuration file for SAIL infrastructure deployment",
   
-  "location": "canadaeast",
+  "location": "uaenorth",
   "resourceGroup": "rg-sail-prod",
   "vnetResourceGroup": "rg-sail-network-prod",
   
@@ -14,8 +14,8 @@
   "amlDescription": "Production SAIL deployment using Azure ML.",
   "prefix": "sailprod",
   
-  "foundryName": "foundry-canadaeast-sail-prod",
-  "foundryLocation": "canadaeast",
-  "foundryProjectName": "foundry-canadaeast-sail-prod-proj",
+  "foundryName": "foundry-uaenorth-sail-prod",
+  "foundryLocation": "uaenorth",
+  "foundryProjectName": "foundry-uaenorth-sail-prod-proj",
   "createPrivateDnsZones": false
 }

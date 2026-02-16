@@ -1,7 +1,7 @@
 import requests
 import json
 
-url = "https://<name>.canadacentral.inference.ml.azure.com/v1/chat/completions"
+url = "https://<name>.uaenorth.inference.ml.azure.com/v1/chat/completions"
 headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer <token>"
