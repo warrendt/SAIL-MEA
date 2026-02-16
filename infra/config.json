@@ -1,8 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Configuration file for SAIL infrastructure deployment",
+  "_comment": "WARNING: Verify Azure OpenAI model availability in your target region. UAE North has limited model support as of 2026. Check https://learn.microsoft.com/azure/ai-services/openai/concepts/models for current availability.",
   
-  "location": "canadaeast",
+  "location": "uaenorth",
   "resourceGroup": "rg-sail-dev",
   "vnetResourceGroup": "rg-sail-network-dev",
   
@@ -15,7 +16,7 @@
   "prefix": "sailtest2",
   
   "foundryName": "foundry-test-nodns",
-  "foundryLocation": "canadaeast",
+  "foundryLocation": "uaenorth",
   "foundryProjectName": "foundry-test-nodns-proj",
   "createPrivateDnsZones": false
 }
