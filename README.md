@@ -1,5 +1,21 @@
 ## Objective
 
+> **⚠️ IMPORTANT NOTICE - Azure OpenAI Model Availability in UAE North**
+>
+> As of early 2026, **Azure OpenAI Service models (including GPT-4o, GPT-4, and GPT-3.5) are NOT generally available in the UAE North region**. While Azure AI Foundry and Azure Machine Learning infrastructure are supported in UAE North, specific AI model deployments may have limited or no availability. 
+>
+> **Key Limitations:**
+> - GPT-4o and GPT-4 models are in gradual rollout and not guaranteed for all customers or deployment types in UAE North
+> - Model inference requests from UAE North may be routed to other regions (e.g., West Europe, France Central), which may not satisfy strict data residency requirements
+> - Quota requests for these models in UAE North may be restricted or unavailable
+>
+> **Before deploying to UAE North:**
+> 1. Verify current model availability in the [official Azure OpenAI model availability matrix](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models)
+> 2. Consider alternative regions with broader model support (e.g., Sweden Central, East US 2) if specific models are critical to your deployment
+> 3. Contact Microsoft support for the latest information on UAE North model availability for your subscription
+>
+> **This repository serves as a template** that must be adapted based on your specific requirements and actual service availability in your target region.
+
 This Sovereign AI Landing Zone (SAIL) repository provides a secure foundation for deploying AI models within UAE's borders on Azure, so organizations can build, scale, and innovate while maintaining the highest standards of privacy and compliance. As the initial focus, we consider sovereignty on Azure as satisfying two key requirements:
 
 * Data **at rest** should be stored within UAE Azure data centres
@@ -23,16 +39,18 @@ In particular for models from the Directly Sold by Azure list within Microsoft F
 
 * Alternatively, global deployment type means that data might be processed for inferencing in any Foundry location in the world. Data zone is not applicable for UAE as only US and Europe regions have [Data Zone support](https://azure.microsoft.com/en-us/blog/announcing-the-availability-of-azure-openai-data-zones-and-latest-updates-from-azure-ai/?msockid=140ffb7f5488655f0412ed745540640a). 
 
-* As of December 17, 2025, these are the models within AI Foundry that provide guaranteed data in-transit processing within UAE:
-  * Standard for [Pay-As-You-Go deployments](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure?view=foundry&preserve-view=true&tabs=global-standard-aoai%2Cstandard-chat-completions%2Cglobal-standard&pivots=azure-openai#standard-deployment-regional-models-by-endpoint) (available through Microsoft Foundry deployed in UAE North region):
+* As of early 2026, **Azure OpenAI models have limited availability in UAE North**. The following models were historically available in other regions but should be verified for UAE North before deployment:
+  * Standard for [Pay-As-You-Go deployments](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure?view=foundry&preserve-view=true&tabs=global-standard-aoai%2Cstandard-chat-completions%2Cglobal-standard&pivots=azure-openai#standard-deployment-regional-models-by-endpoint) (availability in UAE North region should be verified):
     * gpt-3.5 turbo models (Versions 1106, 0125)
     * gpt-4o (Version 1120)
     * text embedding models (ada, 3-large, 3-small)
-  * Regional [Provisioned Throughput Units (PTU) deployments](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure?view=foundry&preserve-view=true&tabs=provisioned%2Cstandard-chat-completions%2Cglobal-standard&pivots=azure-openai#provisioned-deployment-model-availability) (available through Microsoft Foundry deployed in UAE North region):
+  * Regional [Provisioned Throughput Units (PTU) deployments](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure?view=foundry&preserve-view=true&tabs=provisioned%2Cstandard-chat-completions%2Cglobal-standard&pivots=azure-openai#provisioned-deployment-model-availability) (availability in UAE North region should be verified):
     * o3-mini
     * gpt-5
-    * gpt-4o (Versions 1120, 0806, 0513 - also available in UAE Central)
-    * gpt-4o-mini - also available in UAE Central
+    * gpt-4o (Versions 1120, 0806, 0513)
+    * gpt-4o-mini
+
+  **⚠️ Warning**: Always check the [latest Azure OpenAI model availability documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models) before deployment, as availability varies by region, subscription type, and is subject to change.
 
 * There are also certain AI models that could be deployed using the Microsoft Foundry (classic) hub-based service using managed compute, such as [certain Cohere models](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure?view=foundry&preserve-view=true&tabs=global-standard-aoai%2Cstandard-chat-completions%2Cglobal-standard&pivots=azure-direct-others#cohere-models-sold-directly-by-azure) from the Directly Sold by Azure list. Such models would be deployed on managed GPU VMs to ensure data in-transit and data at rest remains in UAE geography in a Hub-based Foundry resource, which is based on the Azure ML deployment infrastructure as seen below.
 

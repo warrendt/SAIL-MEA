@@ -1,5 +1,15 @@
 # SAIL Infrastructure Deployment Guide
 
+> **⚠️ IMPORTANT: Verify Service Availability in Your Target Region**
+>
+> This deployment guide uses UAE North as the default region. However, **Azure OpenAI models (GPT-4o, GPT-4, GPT-3.5) have limited or no general availability in UAE North as of early 2026**. Before deploying:
+>
+> 1. Verify that your required Azure AI services and models are available in your target region using the [Azure OpenAI model availability matrix](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models)
+> 2. Update the `location` parameters in configuration files to match a region where your required models are available (e.g., Sweden Central, East US 2)
+> 3. Contact Microsoft support to confirm availability for your specific subscription
+>
+> Azure AI Foundry and Azure Machine Learning infrastructure are available in UAE North, but specific AI model deployments may require different regions to meet your needs.
+
 This guide provides instructions for deploying the SAIL infrastructure to Azure using the PowerShell deployment script.
 
 ## Prerequisites

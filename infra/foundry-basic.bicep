@@ -1,14 +1,19 @@
 /*
   AI Foundry account and project - with public network access disabled. References existing virtual network
   
+  ⚠️ WARNING: Verify Azure OpenAI model availability before deployment!
+  As of early 2026, GPT-4o and other Azure OpenAI models have limited or no general availability 
+  in UAE North region. Check the official documentation before deploying:
+  https://learn.microsoft.com/azure/ai-services/openai/concepts/models
+  
   Description: 
   - Creates an AI Foundry (previously known as Azure AI Services) account and public network access disabled.
-  - Creates a gpt-4o model deployment
+  - Creates a gpt-4o model deployment (availability must be verified for the target region)
 */
 @description('That name is the name of our application. It has to be unique. Type a name followed by your resource group name. (<name>-<resourceGroupName>)')
 param aiFoundryName string = 'foundry-uaenorth-sail-dev-3'
 
-@description('Location for all resources.')
+@description('Location for all resources. NOTE: Verify that your required Azure OpenAI models are available in this region.')
 param location string = 'uaenorth'
 
 @description('Name of the first project')
